@@ -823,3 +823,4 @@ const CourseViewer: React.FC<CourseViewerProps> = ({
 
 export default CourseViewer;
 
+
