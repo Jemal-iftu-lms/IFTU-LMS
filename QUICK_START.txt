@@ -1,0 +1,270 @@
+═══════════════════════════════════════════════════════════════════════════════
+  IFTU LMS - QUICK START GUIDE
+  National Digital Sovereign Education Center
+═══════════════════════════════════════════════════════════════════════════════
+
+⏱️  SETUP TIME: ~15 MINUTES
+
+═══════════════════════════════════════════════════════════════════════════════
+  STEP 1: CLONE REPOSITORY (1 minute)
+═══════════════════════════════════════════════════════════════════════════════
+
+  $ git clone https://github.com/Jemal-iftu-lms/IFTU-LMS.git
+  $ cd IFTU-LMS
+
+═══════════════════════════════════════════════════════════════════════════════
+  STEP 2: INSTALL DEPENDENCIES (3 minutes)
+═══════════════════════════════════════════════════════════════════════════════
+
+  $ npm install
+
+═══════════════════════════════════════════════════════════════════════════════
+  STEP 3: SETUP ENVIRONMENT (2 minutes)
+═══════════════════════════════════════════════════════════════════════════════
+
+  Copy environment template:
+  $ cp .env.example .env.development.local
+
+  Edit .env.development.local and update:
+    SUPABASE_URL=https://blkxqartwbmjmkvyelzq.supabase.co
+    SUPABASE_ANON_KEY=your_key_here
+    GEMINI_API_KEY=your_key_here
+    VITE_BASE_PATH=/iftu-portal/
+
+═══════════════════════════════════════════════════════════════════════════════
+  STEP 4: START DEVELOPMENT SERVER (1 minute)
+═══════════════════════════════════════════════════════════════════════════════
+
+  $ npm run dev
+
+  ✓ Server starts on http://localhost:3000
+
+═══════════════════════════════════════════════════════════════════════════════
+  ✅ YOU'RE READY TO DEVELOP!
+═══════════════════════════════════════════════════════════════════════════════
+
+═══════════════════════════════════════════════════════════════════════════════
+  COMMON COMMANDS
+═══════════════════════════════════════════════════════════════════════════════
+
+  Development:
+    npm run dev              Start dev server with HMR
+
+  Building:
+    npm run build            Create production build
+    npm run preview          Preview production locally
+    npm run vercel-build     Vercel production build
+
+  Code Quality:
+    npm run type-check       TypeScript validation
+    npm run lint             Code linting
+
+  Utilities:
+    npm start                Run Express server
+    npm run clean            Clean dependencies
+    npm run serve            Alternative preview
+
+═══════════════════════════════════════════════════════════════════════════════
+  NEED HELP?
+═══════════════════════════════════════════════════════════════════════════════
+
+  Setup Issues:
+    → Read: SETUP.md (section: Troubleshooting)
+
+  Deployment Issues:
+    → Read: DEPLOYMENT.md (section: Troubleshooting)
+
+  Project Overview:
+    → Read: README.md
+
+  Configuration Verification:
+    → Read: SETUP_CHECKLIST.md
+
+  All Documentation:
+    → Read: DOCUMENTATION_INDEX.md
+
+═══════════════════════════════════════════════════════════════════════════════
+  ENVIRONMENT VARIABLES NEEDED
+═══════════════════════════════════════════════════════════════════════════════
+
+  Required:
+    ✓ SUPABASE_URL          Database connection URL
+    ✓ SUPABASE_ANON_KEY     Database authentication key
+    ✓ GEMINI_API_KEY        AI/ML service API key
+    ✓ VITE_BASE_PATH        Application base path
+
+  Optional:
+    • NODE_ENV              Environment (development/production)
+    • DEBUG                 Enable debug logging
+    • VITE_API_URL          API base URL
+
+═══════════════════════════════════════════════════════════════════════════════
+  TECHNOLOGY STACK
+═══════════════════════════════════════════════════════════════════════════════
+
+  Frontend:      React 19.2.4 + Vite 6.2.0 + TypeScript 5.8
+  Backend:       Express.js 5.2.1 + Node.js
+  Database:      Supabase (PostgreSQL)
+  AI:            Google Gemini API
+  Deployment:    Vercel
+
+═══════════════════════════════════════════════════════════════════════════════
+  DEPLOYMENT QUICK START
+═══════════════════════════════════════════════════════════════════════════════
+
+  Method 1: Using Vercel CLI
+    $ npm i -g vercel
+    $ vercel login
+    $ vercel --prod
+
+  Method 2: GitHub Integration (Recommended)
+    1. Push to GitHub main branch
+    2. Go to https://vercel.com
+    3. Import repository
+    4. Set environment variables
+    5. Auto-deploys on every push to main
+
+  Method 3: Manual Upload
+    1. npm run build
+    2. Upload dist/ folder to Vercel dashboard
+
+  More details: See DEPLOYMENT.md
+
+═══════════════════════════════════════════════════════════════════════════════
+  TROUBLESHOOTING QUICK FIXES
+═══════════════════════════════════════════════════════════════════════════════
+
+  Port 3000 already in use:
+    $ lsof -ti :3000 | xargs kill -9
+    $ npm run dev
+
+  Dependencies issue:
+    $ rm -rf node_modules package-lock.json
+    $ npm install
+
+  Type errors:
+    $ npm run type-check
+
+  Build fails:
+    $ npm run clean
+    $ npm install
+    $ npm run build
+
+═══════════════════════════════════════════════════════════════════════════════
+  PROJECT STRUCTURE
+═══════════════════════════════════════════════════════════════════════════════
+
+  IFTU-LMS/
+  ├── src/                    Source code
+  ├── public/                 Static assets
+  ├── dist/                   Build output (generated)
+  ├── server.ts              Express server
+  ├── vite.config.ts         Vite config
+  ├── tsconfig.json          TypeScript config
+  ├── vercel.json            Vercel deployment config
+  ├── .env.example           Environment template
+  ├── .gitignore             Git ignore rules
+  ├── package.json           Dependencies & scripts
+  └── README.md              Project documentation
+
+═══════════════════════════════════════════════════════════════════════════════
+  GETTING API KEYS
+═══════════════════════════════════════════════════════════════════════════════
+
+  Supabase:
+    1. Go to https://supabase.com
+    2. Create new project
+    3. Get URL and anon key from Settings > API
+    4. Copy to .env.development.local
+
+  Gemini API:
+    1. Go to https://ai.google.dev
+    2. Get API key
+    3. Copy to .env.development.local
+
+═══════════════════════════════════════════════════════════════════════════════
+  DOCUMENTATION FILES
+═══════════════════════════════════════════════════════════════════════════════
+
+  README.md               Project overview and quick start
+  SETUP.md               Complete setup guide (296 lines)
+  DEPLOYMENT.md          Deployment procedures (332 lines)
+  SETUP_CHECKLIST.md     Configuration verification (336 lines)
+  SETUP_COMPLETE.md      Completion status report (382 lines)
+  DOCUMENTATION_INDEX.md Navigation guide (446 lines)
+  QUICK_START.txt        This file
+
+═══════════════════════════════════════════════════════════════════════════════
+  KEY FEATURES
+═══════════════════════════════════════════════════════════════════════════════
+
+  For Students:
+    ✓ Course Viewer         Access course materials
+    ✓ Study Hall            Collaborative learning
+    ✓ Exam Engine          Take assessments
+    ✓ Assignment Portal     Submit work
+    ✓ Live Interview        Interactive sessions
+    ✓ Performance Hub       Track progress
+    ✓ Certificate Portal    View certificates
+
+  For Teachers:
+    ✓ Dashboard            Class management
+    ✓ Grading              Review submissions
+    ✓ Analytics            View statistics
+
+  For Admins:
+    ✓ System Management    Full control
+    ✓ Reporting            Generate reports
+    ✓ User Management      Manage users
+
+  AI Features:
+    ✓ AI Tutor             Intelligent tutoring
+    ✓ Video Generator      Create content
+    ✓ Smart Assessment     AI-powered exams
+
+═══════════════════════════════════════════════════════════════════════════════
+  NEXT STEPS
+═══════════════════════════════════════════════════════════════════════════════
+
+  ✅ Step 1: Complete setup above
+  ✅ Step 2: npm run dev (start development)
+  ✅ Step 3: Make changes (your code goes here)
+  ✅ Step 4: npm run build (build for production)
+  ✅ Step 5: Read DEPLOYMENT.md (prepare to deploy)
+  ✅ Step 6: Deploy to Vercel (go live)
+
+═══════════════════════════════════════════════════════════════════════════════
+  SUPPORT
+═══════════════════════════════════════════════════════════════════════════════
+
+  Documentation:         See .md files in project root
+  External Docs:         https://vercel.com/docs
+  Database:              https://supabase.com/docs
+  Framework:             https://react.dev
+  Build Tool:            https://vitejs.dev
+
+═══════════════════════════════════════════════════════════════════════════════
+  PROJECT STATUS
+═══════════════════════════════════════════════════════════════════════════════
+
+  ✅ Configuration:      Complete (7 files)
+  ✅ Environment:        Ready (3 files)
+  ✅ Documentation:      Comprehensive (2,350+ lines)
+  ✅ Type Safety:        Enabled
+  ✅ Deployment:         Configured
+  ✅ Team:               Ready
+
+═══════════════════════════════════════════════════════════════════════════════
+  VERSION INFORMATION
+═══════════════════════════════════════════════════════════════════════════════
+
+  Project Version:       0.0.0
+  Node Version:          16.x or higher
+  React Version:         19.2.4
+  Vite Version:          6.2.0
+  TypeScript Version:    5.8
+  Last Updated:          April 14, 2026
+
+═══════════════════════════════════════════════════════════════════════════════
+  Ready to start? Run: npm install && npm run dev
+═══════════════════════════════════════════════════════════════════════════════
