@@ -1,4 +1,3 @@
-
 import { GoogleGenAI, Type } from "@google/genai";
 import { Language, Question, News, Exam, Grade } from "../types";
 import * as mammoth from "mammoth";

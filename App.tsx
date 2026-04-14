@@ -17,7 +17,7 @@ import ProjectReportPortal from './components/ProjectReportPortal';
 import FeedbackWidget from './components/FeedbackWidget';
 import { MOCK_COURSES, MOCK_NEWS, MOCK_EXAMS, SUMMER_STATS, SUMMER_ACTIVITIES } from './constants';
 import { Course, Grade, User, Exam, ExamResult, EducationLevel, Stream, Language, News, Assignment, AssignmentSubmission } from './types';
-import { fetchLatestEducationNews, generateExamsForGrades } from './services/geminiService';
+import { fetchLatestEducationNews, generateExamsForGrades } from '../services/geminiService';
 import { auth } from './firebase';
 import { AssignmentPortal } from './components/AssignmentPortal';
 import { StudyHall } from './components/StudyHall';
