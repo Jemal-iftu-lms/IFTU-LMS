@@ -5,14 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "start": "tsx server.ts",
+    "start": "node server.ts",
     "build": "vite build",
     "lint": "tsc",
-    "type-check": "tsc --noEmit",
-    "preview": "vite preview",
-    "serve": "vite preview",
-    "clean": "rm -rf dist node_modules",
-    "vercel-build": "vite build && npm run type-check"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@google/genai": "^1.40.0",
